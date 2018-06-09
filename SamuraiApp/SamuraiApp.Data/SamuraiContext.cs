@@ -19,8 +19,11 @@ namespace SamuraiApp.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(_connectionString);
-            base.OnConfiguring(optionsBuilder);
+            if (optionsBuilder.IsConfigured == false)
+            {
+                optionsBuilder.UseSqlServer(_connectionString);
+                base.OnConfiguring(optionsBuilder);
+            }
         }
 
         private readonly string _connectionString;
