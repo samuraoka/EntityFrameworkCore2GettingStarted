@@ -10,7 +10,7 @@ namespace SamuraiApp.Data.DiagramGenerator
         {
             // SqlConnection.ConnectionString Property
             // https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlconnection.connectionstring(v=vs.110).aspx
-            var context = new SamuraiContext(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SamuraiAppData;Integrated Security=true");
+            var context = new SamuraiContext();
 
             // Microsoft.EntityFrameworkCore
             // https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/
