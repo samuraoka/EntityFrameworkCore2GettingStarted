@@ -30,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ErikEJ.EntityFrameworkCore.DgmlBuilder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3681435cabd17ad2, processorArchitecture=MSIL">
-      <HintPath>..\packages\ErikEJ.EntityFrameworkCore.DgmlBuilder.1.0.10\lib\netstandard2.0\ErikEJ.EntityFrameworkCore.DgmlBuilder.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.EntityFrameworkCore, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.EntityFrameworkCore.2.1.0\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
     </Reference>
