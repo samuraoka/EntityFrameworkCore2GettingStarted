@@ -61,6 +61,15 @@ namespace SamuraiApp.Data
             }
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // Create the Database Context - ASP.NET Core MVC with Entity Framework Core - Tutorial 1 of 10
+            // https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro?view=aspnetcore-2.1#create-the-database-context
+            modelBuilder.Entity<Samurai>().ToTable("Samurai");
+            modelBuilder.Entity<Quote>().ToTable("Quote");
+            modelBuilder.Entity<Battle>().ToTable("Battle");
+        }
+
         private const string _defaultSettingFilePath = "connectionString.json";
         private readonly string _connectionString;
 
