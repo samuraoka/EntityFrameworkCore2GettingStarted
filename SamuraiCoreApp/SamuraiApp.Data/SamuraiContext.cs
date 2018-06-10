@@ -15,6 +15,7 @@ namespace SamuraiApp.Data
     // Execute the following command to create migration files.
     // Get-Help Add-Migration
     // Add-Migration -Name Initial -Context SamuraiContext -Project SamuraiApp.Data -StartupProject SamuraiApp.Web
+    // Add-Migration -Name Relationship -Context SamuraiContext -Project SamuraiApp.Data -StartupProject SamuraiApp.Web
     //
     // To generate a SQL script for making a database, run the following command.
     // Get-Help Script-Migration
@@ -49,11 +50,17 @@ namespace SamuraiApp.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Create the Database Context - ASP.NET Core MVC with Entity Framework Core - Tutorial 1 of 10
-            // https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro?view=aspnetcore-2.1#create-the-database-context
+            // Table Mapping
+            // https://docs.microsoft.com/en-us/ef/core/modeling/relational/tables
             modelBuilder.Entity<Samurai>().ToTable("Samurai");
             modelBuilder.Entity<Quote>().ToTable("Quote");
             modelBuilder.Entity<Battle>().ToTable("Battle");
+            modelBuilder.Entity<SamuraiBattle>().ToTable("SamuraiBattle");
+
+            // Keys (primary)
+            // https://docs.microsoft.com/en-us/ef/core/modeling/keys
+            modelBuilder.Entity<SamuraiBattle>()
+                .HasKey(s => new { s.SamuraiId, s.BattleId });
         }
 
         private const string _defaultSettingFilePath = "connectionString.json";
