@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SamuraiModel", "SamuraiModel\SamuraiModel.csproj", "{5954080A-85B7-4EF5-96F5-419D2ADC8B4F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomeUI", "SomeUI\SomeUI.csproj", "{ABD0EF3B-CE07-4456-9DE6-88B0991BBA51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5954080A-85B7-4EF5-96F5-419D2ADC8B4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5954080A-85B7-4EF5-96F5-419D2ADC8B4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5954080A-85B7-4EF5-96F5-419D2ADC8B4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABD0EF3B-CE07-4456-9DE6-88B0991BBA51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABD0EF3B-CE07-4456-9DE6-88B0991BBA51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABD0EF3B-CE07-4456-9DE6-88B0991BBA51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABD0EF3B-CE07-4456-9DE6-88B0991BBA51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
