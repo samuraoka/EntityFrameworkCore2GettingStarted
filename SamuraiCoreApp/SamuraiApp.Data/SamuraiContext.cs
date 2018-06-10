@@ -10,33 +10,19 @@ namespace SamuraiApp.Data
     // Microsoft.EntityFrameworkCore.SqlServer
     // https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/
     // Get-Help Install-Package
-    // Install-Package -Id Microsoft.EntityFrameworkCore.SqlServer -ProjectName SamuraiApp.Data
+    // Install-Package -Id Microsoft.EntityFrameworkCore.SqlServer -ProjectName SamuraiApp.Data -Version 2.0.3
     //
-    // To create migration file, it requires Microsoft.EntityFrameworkCore.Tools package.
-    // Run the "get-help entityframeworkcore" command in the Package Manager Console to get
-    // a help message how to create migration file.
-    // Next, Add-Migration command need to be executed in the executable project like SomeCLI.
-    // So, install Microsoft.EntityFrameworkCore.Design package to the SomeCLI project
-    //
-    // Microsoft.EntityFrameworkCore.Tools
-    // https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools/
-    // Install-Package -Id Microsoft.EntityFrameworkCore.Tools -ProjectName SamuraiApp.Data
-    //
-    // Microsoft.EntityFrameworkCore.Design
-    // https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Design/
-    // Install-Package -Id Microsoft.EntityFrameworkCore.Design -ProjectName SomeCLI
-    //
-    // Lastly you can execute the following command to create migration files.
+    // Execute the following command to create migration files.
     // Get-Help Add-Migration
-    // Add-Migration -Name Initial -Context SamuraiContext -Project SamuraiApp.Data -StartupProject SomeCLI
+    // Add-Migration -Name Initial -Context SamuraiContext -Project SamuraiApp.Data -StartupProject SamuraiApp.Web
     //
     // To generate a SQL script for making a database, run the following command.
     // Get-Help Script-Migration
-    // Script-Migration -Idempotent -Context SamuraiContext -Project SamuraiApp.Data -StartupProject SomeCLI
+    // Script-Migration -Idempotent -Context SamuraiContext -Project SamuraiApp.Data -StartupProject SamuraiApp.Web
     //
     // To generate a database, run the following command.
     // Get-Help Update-Database
-    // Update-Database -Context SamuraiContext -Project SamuraiApp.Data -StartupProject SomeCLI -Verbose
+    // Update-Database -Context SamuraiContext -Project SamuraiApp.Data -StartupProject SamuraiApp.Web
     public class SamuraiContext : DbContext
     {
         public DbSet<Samurai> Samurais { get; set; }
