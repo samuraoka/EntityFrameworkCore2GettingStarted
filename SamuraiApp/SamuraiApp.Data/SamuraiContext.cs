@@ -1,5 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using SamuraiApp.Domain;
+using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace SamuraiApp.Data
 {
@@ -32,16 +36,57 @@ namespace SamuraiApp.Data
         public DbSet<Quote> Quotes { get; set; }
         public DbSet<Battle> Battles { get; set; }
 
-        public string ConnectionString { get; set; }
-            = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SamuraiAppData;Integrated Security=true";
+        public SamuraiContext() : this(_defaultSettingFilePath)
+        {
+        }
+
+        public SamuraiContext(string fileName)
+        {
+            _connectionString = ReadConnectionStringFrom(fileName);
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (optionsBuilder.IsConfigured == false)
             {
-                optionsBuilder.UseSqlServer(ConnectionString);
+                optionsBuilder.UseSqlServer(_connectionString);
                 base.OnConfiguring(optionsBuilder);
             }
+        }
+
+        private const string _defaultSettingFilePath = "connectionString.json";
+        private readonly string _connectionString;
+
+        /// <summary>
+        /// Read a connection string from a file.
+        /// </summary>
+        /// <param name="fileName">file name of json format</param>
+        /// <returns>connection string</returns>
+        private string ReadConnectionStringFrom(string fileName)
+        {
+            var connectionString = string.Empty;
+            if (File.Exists(fileName))
+            {
+                string json = File.ReadAllText(fileName);
+
+                // Newtonsoft.Json
+                // https://www.nuget.org/packages/Newtonsoft.Json/
+                // Install-Package -Id Newtonsoft.Json -ProjectName SamuraiApp.Data
+                //
+                // How can I deserialize JSON to a simple Dictionary<string,string> in ASP.NET?
+                // https://stackoverflow.com/questions/1207731/how-can-i-deserialize-json-to-a-simple-dictionarystring-string-in-asp-net
+                var dic = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
+                try
+                {
+                    connectionString = dic["connectionString"];
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    Console.WriteLine(ex.StackTrace);
+                }
+            }
+            return connectionString;
         }
     }
 }
