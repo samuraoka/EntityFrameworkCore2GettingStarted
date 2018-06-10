@@ -23,6 +23,9 @@ namespace SamuraiApp.Data
     //
     // Lastly you can execute the following command to create migration files.
     // Add-Migration -Name Initial -Context SamuraiContext -Project SamuraiApp.Data -StartupProject SomeCLI
+    //
+    // To generate a SQL script for making a database, run the following command.
+    // Script-Migration -Idempotent -Context SamuraiContext -Project SamuraiApp.Data -StartupProject SomeCLI
     public class SamuraiContext : DbContext
     {
         public DbSet<Samurai> Samurais { get; set; }
