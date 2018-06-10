@@ -329,3 +329,4 @@ ASALocalRun/
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
 /SamuraiApp/SomeCLI/connectionString.json
+/SamuraiCoreApp/SamuraiApp.Web/wwwroot/lib
