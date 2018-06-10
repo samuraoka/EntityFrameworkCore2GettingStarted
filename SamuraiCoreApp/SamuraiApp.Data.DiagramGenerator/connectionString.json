@@ -1,0 +1,3 @@
+﻿{
+  "connectionString": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=SamuraiAppData;Integrated Security=true"
+}

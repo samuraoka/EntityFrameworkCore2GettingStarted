@@ -30,11 +30,11 @@ namespace SamuraiApp.Data
         public DbSet<Quote> Quotes { get; set; }
         public DbSet<Battle> Battles { get; set; }
 
-        public SamuraiContext(DbContextOptions<SamuraiContext> options) : this(options, _defaultSettingFilePath)
+        public SamuraiContext(DbContextOptions<SamuraiContext> options) : base(options)
         {
         }
 
-        public SamuraiContext(DbContextOptions<SamuraiContext> options, string fileName) : base(options)
+        public SamuraiContext(string fileName)
         {
             _connectionString = ReadConnectionStringFrom(fileName);
         }
